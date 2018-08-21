@@ -60,7 +60,6 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -158,7 +157,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(157, 9);
+            this.label5.Location = new System.Drawing.Point(435, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 14;
@@ -212,18 +211,19 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(401, 437);
+            this.button3.Location = new System.Drawing.Point(399, 456);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 23);
             this.button3.TabIndex = 21;
             this.button3.Text = "Видалити команду з турніру";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(426, 90);
+            this.button4.Location = new System.Drawing.Point(437, 56);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 23);
+            this.button4.Size = new System.Drawing.Size(121, 23);
             this.button4.TabIndex = 22;
             this.button4.Text = "Підібрати турнір";
             this.button4.UseVisualStyleBackColor = true;
@@ -237,6 +237,7 @@
             this.button5.TabIndex = 23;
             this.button5.Text = "Створити";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -250,22 +251,23 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(438, 224);
+            this.button7.Location = new System.Drawing.Point(438, 85);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(120, 43);
             this.button7.TabIndex = 25;
-            this.button7.Text = "Обрати";
+            this.button7.Text = "Додати команду до турніру";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(21, 414);
+            this.button8.Location = new System.Drawing.Point(399, 485);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(158, 23);
             this.button8.TabIndex = 26;
-            this.button8.Text = "Редагувати";
+            this.button8.Text = "Видалити турнір";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dateTimePicker1
             // 
@@ -303,7 +305,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(438, 123);
+            this.listBox1.Location = new System.Drawing.Point(437, 140);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 36;
@@ -311,7 +313,7 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(411, 271);
+            this.listBox2.Location = new System.Drawing.Point(409, 290);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(149, 160);
             this.listBox2.TabIndex = 37;
@@ -334,19 +336,10 @@
             this.label13.TabIndex = 38;
             this.label13.Text = "Турнір";
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(401, 466);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 23);
-            this.button9.TabIndex = 41;
-            this.button9.Text = "Додати команду до турніру";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 6);
+            this.comboBox1.Location = new System.Drawing.Point(437, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 42;
@@ -358,7 +351,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 537);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.listBox2);
@@ -432,7 +424,6 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }

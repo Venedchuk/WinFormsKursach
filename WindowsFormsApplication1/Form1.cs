@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
             bSource.DataSource = teams;
             comboBox1.DataSource = bSource;
             comboBox1.DisplayMember = "Name";
-            comboBox1.Text ="";
+            comboBox1.Text = "";
 
             //tournmt
             BindingSource bSource2 = new BindingSource();
@@ -29,8 +29,10 @@ namespace WindowsFormsApplication1
             comboBox3.DataSource = bSource2;
             comboBox3.DisplayMember = "Name";
 
-            
-
+            listboxtournament.DataSource = bSource;
+            listboxtournament.DisplayMember = "Name";
+            listboxtournament.Text = "";
+            listboxtournament.SelectionMode = SelectionMode.MultiSimple;
 
             init();
         }
@@ -105,6 +107,33 @@ namespace WindowsFormsApplication1
             tournam.Single(x => x.Name == listBox1.Text).Teams.Add(selectedTeam);
         }
 
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            var team = tournam.Single(x => x.Name == comboBox3.Text).Teams.Single(x => x.Name == listBox2.Text);
+            tournam.Single(x => x.Name == comboBox3.Text).Teams.Remove(team);
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tournam.Single(x => x.Name == comboBox1.Text);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var teamss = new BindingList<Team>();
+            
+                foreach (Team item in listboxtournament.SelectedItems)
+            {
+                teamss.Add(teams.Single(x=>x.Name==item.Name));
+            }
+            tournam.Add(new Tournament(textBox8.Text, dateTimePicker1.Value, textBox4.Text, teamss));
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tournam.Remove(tournam.Single(x=>x.Name== comboBox3.Text));
+        }
     }
 }
