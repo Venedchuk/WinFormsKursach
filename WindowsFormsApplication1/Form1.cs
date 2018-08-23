@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             teams.Add(new Team(textBox1.Text, textBox2.Text, textBox3.Text));
-            //init();
+            //create team
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace WindowsFormsApplication1
             teams.Single(x => x.Name == selectedTeam.Name).Name = textBox6.Text;
             teams.Single(x => x.Name == selectedTeam.Name).Town = textBox7.Text;
             teams.Single(x => x.Name == selectedTeam.Name).League = textBox5.Text;
+            //get data from textboxs and modifity existing team
             BindingSource bSource = new BindingSource();
             bSource.DataSource = teams;
             comboBox1.DataSource = bSource;
@@ -104,12 +105,13 @@ namespace WindowsFormsApplication1
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //add selected team to selected championship
             tournam.Single(x => x.Name == listBox1.Text).Teams.Add(selectedTeam);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            //remove selected team from tournament
             var team = tournam.Single(x => x.Name == comboBox3.Text).Teams.Single(x => x.Name == listBox2.Text);
             tournam.Single(x => x.Name == comboBox3.Text).Teams.Remove(team);
 
@@ -122,17 +124,21 @@ namespace WindowsFormsApplication1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //cteate tournament
             var teamss = new BindingList<Team>();
             
                 foreach (Team item in listboxtournament.SelectedItems)
             {
+                //add to tournament all selected team
                 teamss.Add(teams.Single(x=>x.Name==item.Name));
             }
             tournam.Add(new Tournament(textBox8.Text, dateTimePicker1.Value, textBox4.Text, teamss));
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //remove tournir
             tournam.Remove(tournam.Single(x=>x.Name== comboBox3.Text));
         }
     }
